@@ -12,9 +12,12 @@
 
 <mat-sidenav-container>
   <mat-sidenav [opened]="opened" mode="side">
-    <button mat-icon-button class="favorite-icon" aria-label="Botão de logout">
-      <mat-icon class="logout-icon">logout</mat-icon>
-    </button>
+    <div class="sidenav-footer">
+      <a mat-fab extended routerLink="." class="logout-button">
+        <mat-icon class="logout-icon">logout</mat-icon>
+        Sair
+      </a>
+    </div>
   </mat-sidenav>
   <mat-sidenav-content>
 
