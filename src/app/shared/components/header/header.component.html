@@ -1,0 +1,22 @@
+<mat-toolbar class="header-toolbar">
+  <button mat-icon-button class="menu-icon" aria-label="Botão de menu" (click)="opened = !opened">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="app-title">CupCakes Store</span>
+  <div class="right-icons">
+    <button mat-icon-button class="favorite-icon" aria-label="Botão de favorito">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav [opened]="opened" mode="side">
+    <button mat-icon-button class="favorite-icon" aria-label="Botão de logout">
+      <mat-icon class="logout-icon">logout</mat-icon>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,40 @@
+.header-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.menu-icon {
+  order: 1;
+}
+
+.app-title {
+  order: 2;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.right-icons {
+  order: 3;
+  display: flex;
+}
+
+.favorite-icon,
+.share-icon {
+  margin-left: 8px;
+}
+
+.mat-sidenav-container {
+  height: 100vh;
+}
+
+.mat-sidenav {
+  width: 200px;
+  background-color: #f0f0f0;
+}
+
+.logout-icon {
+  color: #000;
+}
+
