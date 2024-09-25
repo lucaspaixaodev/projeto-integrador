@@ -7,10 +7,6 @@ import { RegisterComponent } from './pages/register/register.component';
 export const routes: Routes = [
   {
     path: '',
-    component: HeaderComponent
-  },
-  {
-    path: 'home',
     component: HomeComponent
   },
   {
