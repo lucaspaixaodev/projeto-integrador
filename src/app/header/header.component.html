@@ -1,22 +1,13 @@
 <mat-toolbar class="header-toolbar">
-  <button mat-icon-button class="menu-icon" aria-label="Botão de menu" (click)="opened = !opened">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span class="app-title">CupCakes Store</span>
-  <div class="right-icons">
-    <button mat-button class="login-icon" aria-label="Botão de login" routerLink="/login">
-      Login <mat-icon>login</mat-icon>
+  <div class="toolbar-container">
+    <button mat-icon-button class="menu-icon left-aligned" aria-label="botao-de-menu">
+      <mat-icon>menu</mat-icon>
     </button>
+    <span class="app-title center-aligned">CupCakes Store</span>
+    <div class="right-aligned">
+      <button mat-button class="login-icon" aria-label="botao-de-login">
+        Login <mat-icon>login</mat-icon>
+      </button>
+    </div>
   </div>
 </mat-toolbar>
-
-<!-- <mat-sidenav-container>
-  <mat-sidenav [opened]="opened" mode="side">
-    <div class="sidenav-footer">
-      <a mat-fab extended routerLink="." class="logout-button">
-        <mat-icon class="logout-icon">logout</mat-icon>
-        Sair
-      </a>
-    </div>
-  </mat-sidenav>
-</mat-sidenav-container> -->

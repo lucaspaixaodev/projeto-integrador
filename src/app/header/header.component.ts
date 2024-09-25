@@ -12,5 +12,5 @@ import { MatSidenavModule } from '@angular/material/sidenav';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  public opened = false;
+
 }
