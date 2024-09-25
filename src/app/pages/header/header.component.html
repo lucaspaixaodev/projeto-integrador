@@ -1,12 +1,15 @@
-<mat-toolbar color="primary" class="header-toolbar">
+<mat-toolbar class="header-toolbar">
   <div class="toolbar-container">
-    <button mat-icon-button class="menu-icon left-aligned" aria-label="botao-de-menu">
-      <mat-icon>menu</mat-icon>
+    <button mat-icon-button class="menu-icon left-aligned" aria-label="botao-de-menu" (click)="navigateToHome()">
+      <mat-icon>home</mat-icon>
     </button>
     <span class="app-title center-aligned">CupCakes Store</span>
     <div class="right-aligned">
-      <button mat-button class="login-icon" aria-label="botao-de-login">
+      <button mat-button class="login-icon" aria-label="botao-de-login" (click)="navigateToLogin()">
         Login <mat-icon>login</mat-icon>
+      </button>
+      <button mat-button class="register-icon" aria-label="botao-de-cadastro" (click)="navigateToRegister()">
+        Cadastrar <mat-icon>person_add</mat-icon>
       </button>
     </div>
   </div>

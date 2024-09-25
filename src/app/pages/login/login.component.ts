@@ -10,6 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
+import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -22,34 +24,23 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     MatDividerModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  public readonly email = new FormControl('', [Validators.required, Validators.email]);
-  public readonly errorMessage = signal('');
-  public hide = signal(true);
+  public email: string = '';
+  public password: any;
 
-  constructor() {
-    console.log('LoginComponent inicializado');
+  constructor(private router: Router) {}
 
-    merge(this.email.statusChanges, this.email.valueChanges)
-      .pipe(takeUntilDestroyed())
-      .subscribe(() => this.atualizarMensagemDeErro());
+  public navigateToRegister() {
+    this.router.navigate(['/register']);
   }
 
-  public atualizarMensagemDeErro() {
-    if (this.email.hasError('required')) {
-      this.errorMessage.set('O e-mail é obrigatório');
-    } else if (this.email.hasError('email')) {
-      this.errorMessage.set('O e-mail é inválido');
-    }
-  }
-
-  public clickEvent(evento: MouseEvent) {
-    this.hide.set(!this.hide());
-    evento.stopPropagation();
+  public onSubmit() {
+    console.log(this.email, this.password);
   }
 }
