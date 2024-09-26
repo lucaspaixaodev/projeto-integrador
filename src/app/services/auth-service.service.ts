@@ -2,13 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { tap, map } from 'rxjs/operators';
-
-interface User {
-  id: string;
-  email: string;
-  isAdmin: boolean;
-}
-
+import { User } from '../interfaces/user.interface';
 @Injectable({
   providedIn: 'root'
 })
