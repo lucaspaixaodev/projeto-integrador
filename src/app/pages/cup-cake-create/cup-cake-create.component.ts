@@ -18,8 +18,8 @@ import { Location } from '@angular/common';
 export class CupCakeCreateComponent implements OnInit {
   private _fb = inject(FormBuilder);
   private _activatedRoute = inject(ActivatedRoute);
-  private _router = inject(Router);
-  private _cupcakeService = inject(CupcakeService);
+  // private _router = inject(Router);
+  // private _cupcakeService = inject(CupcakeService);
   private _location = inject(Location);
 
   cupcakeForm: FormGroup;
