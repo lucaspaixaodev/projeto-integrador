@@ -9,14 +9,7 @@ import { CommonModule } from '@angular/common';
 import { CartService } from '../../services/cart.service';
 import { Router } from '@angular/router';
 import { inject } from '@angular/core';
-
-interface CartItem {
-  id: number;
-  name: string;
-  price: number;
-  quantity: number;
-  image: string; // Adicionada a propriedade image
-}
+import { CartItem } from '../../interfaces/cart-item.interface';
 
 @Component({
   selector: 'app-cart',
@@ -34,32 +27,32 @@ interface CartItem {
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  router = inject(Router);
+  private _router = inject(Router);
+  private _cartService = inject(CartService);
+
   cartItems: CartItem[] = [];
 
-  constructor(private cartService: CartService) { }
-
   ngOnInit(): void {
-    this.cartItems = this.cartService.getCartItems();
+    this.cartItems = this._cartService.getCartItems();
   }
 
   removeItem(item: CartItem): void {
-    this.cartService.removeFromCart(item.id);
-    this.cartItems = this.cartService.getCartItems();
+    this._cartService.removeFromCart(item.id);
+    this.cartItems = this._cartService.getCartItems();
   }
 
   decreaseQuantity(item: CartItem): void {
     if (item.quantity > 1) {
-      this.cartService.updateQuantity(item.id, item.quantity - 1);
+      this._cartService.updateQuantity(item.id, item.quantity - 1);
     } else {
       this.removeItem(item);
     }
-    this.cartItems = this.cartService.getCartItems();
+    this.cartItems = this._cartService.getCartItems();
   }
 
   increaseQuantity(item: CartItem): void {
-    this.cartService.updateQuantity(item.id, item.quantity + 1);
-    this.cartItems = this.cartService.getCartItems();
+    this._cartService.updateQuantity(item.id, item.quantity + 1);
+    this.cartItems = this._cartService.getCartItems();
   }
 
   getTotalItems(): number {
@@ -71,12 +64,10 @@ export class CartComponent implements OnInit {
   }
 
   checkout(): void {
-    // Implemente a lógica de finalização da compra aqui
     console.log('Finalizando a compra...');
   }
 
   navigateToHome(): void {
-    this.router.navigate(['']);
+    this._router.navigate(['']);
   }
-
 }

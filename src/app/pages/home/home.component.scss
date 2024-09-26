@@ -70,21 +70,21 @@
     transition: background-color 0.3s;
 
     &-primary {
-      background-color: #FF69B4; // Rosa claro
+      background-color: #FF69B4;
       border-color: #FF69B4;
 
       &:hover {
-        background-color: #FF1493; // Rosa mais escuro
+        background-color: #FF1493;
         border-color: #FF1493;
       }
     }
 
     &-success {
-      background-color: #20B2AA; // Verde-azulado claro
+      background-color: #20B2AA;
       border-color: #20B2AA;
 
       &:hover {
-        background-color: #008B8B; // Verde-azulado mais escuro
+        background-color: #008B8B;
         border-color: #008B8B;
       }
     }

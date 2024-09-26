@@ -1,7 +1,7 @@
 .header-toolbar {
-  background-color: #f8e5e5; // Cor de fundo suave para uma loja de cupcakes
+  background-color: #f8e5e5;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 80px; // Altura fixa para o cabeçalho
+  height: 80px;
 
   .toolbar-container {
     display: flex;
@@ -10,28 +10,28 @@
     width: 100%;
     height: 100%;
     padding: 0 16px;
-    position: relative; // Adicionado para posicionamento absoluto da logo
+    position: relative;
   }
 
   .home-button {
-    color: #e91e63; // Cor rosa para o ícone de casa
+    color: #e91e63;
   }
 
   .logo-container {
-    position: absolute; // Posicionamento absoluto
-    left: 50%; // Centraliza horizontalmente
-    top: 50%; // Centraliza verticalmente
-    transform: translate(-50%, -50%); // Ajusta o centro exato
-    z-index: 1; // Garante que a logo fique acima dos outros elementos
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 
     .app-logo {
-      height: 100px; // Tamanho reduzido para se adequar melhor ao cabeçalho
+      height: 100px;
       object-fit: contain;
-      transition: transform 0.3s ease, filter 0.3s ease; // Adicionada transição suave
+      transition: transform 0.3s ease, filter 0.3s ease;
 
       &:hover {
-        transform: scale(1.05); // Efeito de hover mais sutil
-        filter: brightness(1.1); // Aumenta levemente o brilho ao passar o mouse
+        transform: scale(1.05);
+        filter: brightness(1.1);
       }
     }
 
@@ -46,17 +46,17 @@
   .toolbar-actions {
     display: flex;
     align-items: center;
-    margin-left: auto; // Empurra as ações para a direita
+    margin-left: auto;
   }
 
   .cart-button, .auth-button, .admin-button {
     margin-left: 16px;
     color: #333;
-    font-size: 14px; // Tamanho de fonte reduzido
+    font-size: 14px;
 
     mat-icon {
       margin-right: 4px;
-      font-size: 20px; // Tamanho do ícone ajustado
+      font-size: 20px;
     }
   }
 
@@ -77,7 +77,7 @@
 
   .auth-button, .admin-button {
     &:hover {
-      background-color: rgba(233, 30, 99, 0.1); // Cor rosa suave no hover
+      background-color: rgba(233, 30, 99, 0.1);
     }
   }
 }

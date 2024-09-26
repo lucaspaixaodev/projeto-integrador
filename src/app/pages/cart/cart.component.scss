@@ -71,7 +71,7 @@ mat-card-actions {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
-    min-width: 80px; // Ajuste este valor conforme necessário
+    min-width: 80px;
     text-align: center;
   }
 }
@@ -90,30 +90,30 @@ mat-card-actions {
 }
 
 button {
-  width: auto; // Alterado de 100% para auto
-  padding: 8px 16px; // Reduzido o padding
+  width: auto;
+  padding: 8px 16px;
   background-color: #20B2AA;
   color: white;
   border: none;
   border-radius: 4px;
-  font-size: 14px; // Reduzido o tamanho da fonte
+  font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin-right: 10px; // Adicionado espaçamento à direita
-  margin-bottom: 10px; // Adicionado espaçamento abaixo
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 button:last-child {
-  margin-right: 0; // Remove a margem direita do último botão
+  margin-right: 0;
 }
 
 button:hover {
-    background-color: #008B8B; // Verde-azulado mais escuro
+    background-color: #008B8B;
     border-color: #008B8B;
   }
 
 button.continuar-comprando {
-  background-color: #20B2AA; // Verde-azulado claro
+  background-color: #20B2AA;
   border-color: #20B2AA;
   color: white;
   padding: 10px 20px;
@@ -123,19 +123,18 @@ button.continuar-comprando {
   transition: background-color 0.3s ease, border-color 0.3s ease;
 
   &:hover {
-    background-color: #008B8B; // Verde-azulado mais escuro
+    background-color: #008B8B;
     border-color: #008B8B;
   }
 }
 
-// Novo estilo para o botão de remover (vermelho)
 button.remover {
-  background-color: #FF69B4; // Rosa claro
+  background-color: #FF69B4;
   color: white;
 }
 
 button.remover:hover {
-  background-color: #FF1493; // Rosa mais escuro
+  background-color: #FF1493;
   border-color: #FF1493;
 }
 
@@ -147,15 +146,14 @@ button[mat-button] {
   cursor: pointer;
 }
 
-// Estilos específicos para os botões de aumentar e diminuir quantidade
 button[mat-button]:nth-child(2),
 button[mat-button]:nth-child(3) {
   font-weight: bold;
-  font-size: 18px; // Aumenta o tamanho da fonte para os símbolos + e -
+  font-size: 18px;
 }
 
 .finalizar-compra {
-  background-color: #20B2AA; // Verde-azulado claro
+  background-color: #20B2AA;
   border-color: #20B2AA;
   color: white;
   padding: 10px 20px;
@@ -165,7 +163,7 @@ button[mat-button]:nth-child(3) {
   transition: background-color 0.3s ease, border-color 0.3s ease;
 
   &:hover {
-    background-color: #008B8B; // Verde-azulado mais escuro
+    background-color: #008B8B;
     border-color: #008B8B;
   }
 }

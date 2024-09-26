@@ -6,43 +6,38 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CupcakeService {
-  private apiUrl = 'http://seu-backend-api.com/api/cupcakes'; // Substitua pela URL real da sua API
-
-  constructor(private http: HttpClient) { }
+  private _http = inject(HttpClient);
+  private _apiUrl = 'http://localhost:3000/api/cupcakes'; // Substitua pela URL real da sua API
 
   getCupcakes(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+    return this._http.get<any[]>(this._apiUrl);
   }
 
   getCupcake(id: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${id}`);
+    return this._http.get<any>(`${this._apiUrl}/${id}`);
   }
 
   createCupcake(cupcake: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, cupcake);
+    return this._http.post<any>(this._apiUrl, cupcake);
   }
 
   updateCupcake(id: number, cupcake: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/${id}`, cupcake);
+    return this._http.put<any>(`${this._apiUrl}/${id}`, cupcake);
   }
 
   deleteCupcake(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/${id}`);
-  }
-
-  getCategories(): Observable<string[]> {
-    return this.http.get<string[]>(`${this.apiUrl}/categories`);
+    return this._http.delete<any>(`${this._apiUrl}/${id}`);
   }
 
   getSales(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/sales`);
+    return this._http.get<any[]>(`${this._apiUrl}/sales`);
   }
 
   getSalesHistory(cupcakeId: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/${cupcakeId}/sales-history`);
+    return this._http.get<any[]>(`${this._apiUrl}/${cupcakeId}/sales-history`);
   }
 
   getReviews(cupcakeId: number): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/${cupcakeId}/reviews`);
+    return this._http.get<any[]>(`${this._apiUrl}/${cupcakeId}/reviews`);
   }
 }

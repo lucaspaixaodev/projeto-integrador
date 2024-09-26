@@ -8,16 +8,19 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-cup-cake-create',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule
+  ],
   templateUrl: './cup-cake-create.component.html',
   styleUrl: './cup-cake-create.component.scss'
 })
 export class CupCakeCreateComponent implements OnInit {
-  private fb = inject(FormBuilder);
-  private activatedRoute = inject(ActivatedRoute);
-  private router = inject(Router);
-  // private cupcakeService = inject(CupcakeService);
-  private location = inject(Location);
+  private _fb = inject(FormBuilder);
+  private _activatedRoute = inject(ActivatedRoute);
+  private _router = inject(Router);
+  private _cupcakeService = inject(CupcakeService);
+  private _location = inject(Location);
 
   cupcakeForm: FormGroup;
   isEditMode = false;
@@ -26,7 +29,7 @@ export class CupCakeCreateComponent implements OnInit {
   imagemPreview: string | ArrayBuffer | null = null;
 
   constructor() {
-    this.cupcakeForm = this.fb.group({
+    this.cupcakeForm = this._fb.group({
       nome: ['', Validators.required],
       descricao: [''],
       preco: ['', [Validators.required, Validators.min(0)]],
@@ -35,7 +38,7 @@ export class CupCakeCreateComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(params => {
+    this._activatedRoute.params.subscribe(params => {
       if (params['id']) {
         this.isEditMode = true;
         this.cupcakeId = +params['id'];
@@ -86,6 +89,6 @@ export class CupCakeCreateComponent implements OnInit {
   }
 
   onBack() {
-    this.location.back();
+    this._location.back();
   }
 }

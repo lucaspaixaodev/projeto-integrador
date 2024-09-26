@@ -1,11 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormControl, Validators } from '@angular/forms';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { merge } from 'rxjs';
-import { signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -31,16 +27,16 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  public email: string = '';
-  public password: any;
+  private _router = inject(Router);
 
-  constructor(private router: Router) {}
+  email: string = '';
+  password: any;
 
-  public navigateToRegister() {
-    this.router.navigate(['/register']);
+  navigateToRegister() {
+    this._router.navigate(['/register']);
   }
 
-  public onSubmit() {
+  onSubmit() {
     console.log(this.email, this.password);
   }
 }

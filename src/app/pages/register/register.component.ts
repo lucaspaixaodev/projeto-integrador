@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -10,18 +10,18 @@ import { Router } from '@angular/router';
   styleUrl: './register.component.scss'
 })
 export class RegisterComponent {
-  public name: string = '';
-  public email: string = '';
-  public password: string = '';
-  public confirmPassword: string = '';
+  private _router = inject(Router);
 
-  constructor(private router: Router) {}
+  name: string = '';
+  email: string = '';
+  password: string = '';
+  confirmPassword: string = '';
 
-  public navigateToLogin() {
-    this.router.navigate(['/login']);
+  navigateToLogin() {
+    this._router.navigate(['/login']);
   }
 
-  public onSubmit() {
+  onSubmit() {
     console.log(this.name, this.email, this.password, this.confirmPassword);
   }
 }

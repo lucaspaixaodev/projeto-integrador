@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../services/cart.service';
 import { Router } from '@angular/router';
+import { CupcakeService } from '../../services/cup-cake-service.service';
 
 @Component({
   selector: 'app-home',
@@ -11,8 +12,10 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  public cartService = inject(CartService);
-  private router = inject(Router);
+  private _router = inject(Router);
+  // private _cupcakeService = inject(CupcakeService);
+
+  cartService = inject(CartService);
 
   public products = [
     { id: 1, name: 'Cupcake de Chocolate', price: 9.99, image: 'assets/images/cupcake-chocolate.jpg' },
@@ -24,7 +27,11 @@ export class HomeComponent {
     { id: 7, name: 'Cupcake de Caramelo', price: 10.49, image: 'assets/images/cupcake-caramelo.jpg' }
   ];
 
-  constructor() { }
+  constructor() {
+    // this.cupcakeService.getCupcakes().subscribe((cupcakes) => {
+    //   this.products = cupcakes;
+    // });
+  }
 
   addToCart(product: { id: number, name: string, price: number, image: string }) {
     this.cartService.addToCart(product);
@@ -32,6 +39,6 @@ export class HomeComponent {
 
   buyNow(product: any) {
     this.cartService.addToCart(product);
-    this.router.navigate(['/cart']);
+    this._router.navigate(['/cart']);
   }
 }

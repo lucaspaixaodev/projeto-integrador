@@ -7,20 +7,21 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-cup-cakes-report',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [
+    CommonModule,
+    FormsModule
+  ],
   templateUrl: './cup-cakes-report.component.html',
   styleUrl: './cup-cakes-report.component.scss'
 })
 export class CupCakesReportComponent implements OnInit {
-  // private cupcakeService = inject(CupcakeService);
-  private location = inject(Location);
+  // private _cupcakeService = inject(CupcakeService);
+  private _location = inject(Location);
 
   sales: any[] = [];
   filteredSales: any[] = [];
   startDate: string = '';
   endDate: string = '';
-
-  constructor() {}
 
   ngOnInit() {
     // this.loadSales();
@@ -50,6 +51,6 @@ export class CupCakesReportComponent implements OnInit {
   }
 
   onBack() {
-    this.location.back();
+    this._location.back();
   }
 }

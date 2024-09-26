@@ -1,13 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-
-export interface CartItem {
-  id: number;
-  name: string;
-  price: number;
-  quantity: number;
-  image: string; // Adicionada a propriedade image
-}
+import { CartItem } from '../interfaces/cart-item.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -16,17 +9,20 @@ export class CartService {
   private _cartItems: CartItem[] = [];
   private _cartItemCount = new BehaviorSubject<number>(0);
 
-  constructor() { }
-
-  public getCartItems(): CartItem[] {
+  getCartItems(): CartItem[] {
     return this._cartItems;
   }
 
-  public getCartItemCount() {
+  getCartItemCount() {
     return this._cartItemCount.asObservable();
   }
 
-  public addToCart(product: { id: number, name: string, price: number, image: string }) {
+  private _updateCartItemCount() {
+    const count = this._cartItems.reduce((total, item) => total + item.quantity, 0);
+    this._cartItemCount.next(count);
+  }
+
+  addToCart(product: { id: number, name: string, price: number, image: string }) {
     const existingItem = this._cartItems.find(item => item.id === product.id);
     if (existingItem) {
       existingItem.quantity += 1;
@@ -36,7 +32,7 @@ export class CartService {
     this._updateCartItemCount();
   }
 
-  public removeFromCart(productId: number) {
+  removeFromCart(productId: number) {
     const index = this._cartItems.findIndex(item => item.id === productId);
     if (index > -1) {
       this._cartItems.splice(index, 1);
@@ -44,7 +40,7 @@ export class CartService {
     }
   }
 
-  public updateQuantity(productId: number, quantity: number) {
+  updateQuantity(productId: number, quantity: number) {
     const item = this._cartItems.find(item => item.id === productId);
     if (item) {
       item.quantity = quantity;
@@ -54,10 +50,5 @@ export class CartService {
         this._updateCartItemCount();
       }
     }
-  }
-
-  private _updateCartItemCount() {
-    const count = this._cartItems.reduce((total, item) => total + item.quantity, 0);
-    this._cartItemCount.next(count);
   }
 }

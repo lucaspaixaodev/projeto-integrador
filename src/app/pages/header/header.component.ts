@@ -24,32 +24,32 @@ import { CommonModule } from '@angular/common';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  public cartItemCount$!: Observable<number>;
-  public cartService = inject(CartService);
+  private _cartService = inject(CartService);
+  private _router = inject(Router);
 
-  constructor(private router: Router) {}
+  cartItemCount$!: Observable<number>;
 
-  public ngOnInit() {
-    this.cartItemCount$ = this.cartService.getCartItemCount();
+  ngOnInit() {
+    this.cartItemCount$ = this._cartService.getCartItemCount();
   }
 
-  public navigateToHome() {
-    this.router.navigate(['/']);
+  navigateToHome() {
+    this._router.navigate(['/']);
   }
 
-  public navigateToLogin() {
-    this.router.navigate(['/login']);
+  navigateToLogin() {
+    this._router.navigate(['/login']);
   }
 
-  public navigateToRegister() {
-    this.router.navigate(['/register']);
+  navigateToRegister() {
+    this._router.navigate(['/register']);
   }
 
-  public navigateToCart() {
-    this.router.navigate(['/cart']);
+  navigateToCart() {
+    this._router.navigate(['/cart']);
   }
 
-  public navigateToAdmin() {
-    this.router.navigate(['/admin']);
+  navigateToAdmin() {
+    this._router.navigate(['/admin']);
   }
 }

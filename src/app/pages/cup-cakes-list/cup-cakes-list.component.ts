@@ -8,14 +8,17 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-cup-cakes-list',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [
+    CommonModule,
+    FormsModule
+  ],
   templateUrl: './cup-cakes-list.component.html',
   styleUrls: ['./cup-cakes-list.component.scss']
 })
 export class CupCakesListComponent implements OnInit {
   // private _cupcakeService = inject(CupcakeService);
   private _router = inject(Router);
-  private location = inject(Location);
+  private _location = inject(Location);
 
   cupcakes: any[] = [];
   filteredCupcakes: any[] = [];
@@ -23,8 +26,6 @@ export class CupCakesListComponent implements OnInit {
   currentPage: number = 1;
   totalPages: number = 1;
   itemsPerPage: number = 10;
-
-  constructor() {}
 
   ngOnInit() {
     // this.loadCupcakes();
@@ -89,6 +90,6 @@ export class CupCakesListComponent implements OnInit {
   }
 
   onBack() {
-    this.location.back();
+    this._location.back();
   }
 }
