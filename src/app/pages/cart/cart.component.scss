@@ -1,14 +1,20 @@
 .cart-container {
   max-width: 800px;
   margin: 0 auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
   padding: 20px;
   background-color: #f5f5f5;
   border-radius: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.cart-title {
   text-align: center;
   color: #333;
   margin-bottom: 20px;
@@ -19,6 +25,55 @@ h2 {
   padding: 15px;
   background-color: white;
   border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cart-item-content {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.cart-item-image-container {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+}
+
+.cart-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10px;
+
+  button {
+    margin-right: 10px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    min-width: 80px; // Ajuste este valor conforme necessário
+    text-align: center;
+  }
 }
 
 .cart-summary {
@@ -37,7 +92,7 @@ h2 {
 button {
   width: auto; // Alterado de 100% para auto
   padding: 8px 16px; // Reduzido o padding
-  background-color: #007bff;
+  background-color: #20B2AA;
   color: white;
   border: none;
   border-radius: 4px;
@@ -53,34 +108,64 @@ button:last-child {
 }
 
 button:hover {
-  background-color: #0056b3;
-}
-
-// Adicione este novo seletor para o botão de finalizar compra
-button.finalizar-compra {
-  background-color: #28a745; // Cor verde
-}
+    background-color: #008B8B; // Verde-azulado mais escuro
+    border-color: #008B8B;
+  }
 
 button.continuar-comprando {
-  background-color: #28a745; // Cor verde
-}
+  background-color: #20B2AA; // Verde-azulado claro
+  border-color: #20B2AA;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 
-button.finalizar-compra:hover {
-  background-color: #218838; // Cor verde mais escura para o hover
+  &:hover {
+    background-color: #008B8B; // Verde-azulado mais escuro
+    border-color: #008B8B;
+  }
 }
 
 // Novo estilo para o botão de remover (vermelho)
 button.remover {
-  background-color: #dc3545; // Cor vermelha
+  background-color: #FF69B4; // Rosa claro
+  color: white;
 }
 
 button.remover:hover {
-  background-color: #c82333; // Cor vermelha mais escura para o hover
+  background-color: #FF1493; // Rosa mais escuro
+  border-color: #FF1493;
 }
 
-.cart-title {
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
-  font-size: 24px;
+button[mat-button] {
+  background-color: #20B2AA;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+// Estilos específicos para os botões de aumentar e diminuir quantidade
+button[mat-button]:nth-child(2),
+button[mat-button]:nth-child(3) {
+  font-weight: bold;
+  font-size: 18px; // Aumenta o tamanho da fonte para os símbolos + e -
+}
+
+.finalizar-compra {
+  background-color: #20B2AA; // Verde-azulado claro
+  border-color: #20B2AA;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    background-color: #008B8B; // Verde-azulado mais escuro
+    border-color: #008B8B;
+  }
 }

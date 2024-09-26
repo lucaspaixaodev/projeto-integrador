@@ -6,6 +6,7 @@ export interface CartItem {
   name: string;
   price: number;
   quantity: number;
+  image: string; // Adicionada a propriedade image
 }
 
 @Injectable({
@@ -25,7 +26,7 @@ export class CartService {
     return this._cartItemCount.asObservable();
   }
 
-  public addToCart(product: { id: number, name: string, price: number }) {
+  public addToCart(product: { id: number, name: string, price: number, image: string }) {
     const existingItem = this._cartItems.find(item => item.id === product.id);
     if (existingItem) {
       existingItem.quantity += 1;

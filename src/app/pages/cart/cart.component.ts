@@ -15,6 +15,7 @@ interface CartItem {
   name: string;
   price: number;
   quantity: number;
+  image: string; // Adicionada a propriedade image
 }
 
 @Component({

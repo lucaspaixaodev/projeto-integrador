@@ -2,19 +2,24 @@
   <h1 class="cart-title">Seu Carrinho</h1>
 
   <mat-card *ngFor="let item of cartItems" class="cart-item">
-    <mat-card-content>
-      <mat-card-title>{{ item.name }}</mat-card-title>
-      <p >Quantidade: {{ item.quantity }}</p>
-    </mat-card-content>
-    <mat-card-content>
-      <p>Preço unitário: R$ {{ item.price.toFixed(2) }}</p>
-      <p>Subtotal: R$ {{ (item.price * item.quantity).toFixed(2) }}</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button class="remover" (click)="removeItem(item)">Remover</button>
-      <button mat-button (click)="decreaseQuantity(item)">-</button>
-      <button mat-button (click)="increaseQuantity(item)">+</button>
-    </mat-card-actions>
+    <div class="cart-item-wrapper">
+      <div class="cart-item-content">
+        <mat-card-content>
+          <mat-card-title>{{ item.name }}</mat-card-title>
+          <p>Quantidade: {{ item.quantity }}</p>
+          <p>Preço unitário: R$ {{ item.price.toFixed(2) }}</p>
+          <p>Subtotal: R$ {{ (item.price * item.quantity).toFixed(2) }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button class="remover" (click)="removeItem(item)">Remover</button>
+          <button mat-button (click)="decreaseQuantity(item)">-</button>
+          <button mat-button (click)="increaseQuantity(item)">+</button>
+        </mat-card-actions>
+      </div>
+      <div class="cart-item-image-container">
+        <img [src]="item.image" [alt]="item.name" class="cart-item-image">
+      </div>
+    </div>
   </mat-card>
 
   <mat-card *ngIf="cartItems.length > 0" class="cart-summary">
