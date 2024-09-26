@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CupcakeService } from '../../services/cup-cake-service.service';
+import { CupcakeService } from '../../services/cup-cake.service';
 import { Location } from '@angular/common';
 
 @Component({

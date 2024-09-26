@@ -8,6 +8,7 @@ import { CartService } from '../../services/cart.service';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../services/auth-service.service'; // Adicione esta importação
 
 @Component({
   selector: 'app-header',
@@ -26,11 +27,16 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent {
   private _cartService = inject(CartService);
   private _router = inject(Router);
+  // private _authService = inject(AuthService);
 
   cartItemCount$!: Observable<number>;
+  isAdmin$!: Observable<boolean>;
+  isAdmin = false;
 
   ngOnInit() {
     this.cartItemCount$ = this._cartService.getCartItemCount();
+    this.isAdmin = true;
+    // this.isAdmin$ = this._authService.isAdmin$ as Observable<boolean>;
   }
 
   navigateToHome() {

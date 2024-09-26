@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../services/cart.service';
 import { Router } from '@angular/router';
-import { CupcakeService } from '../../services/cup-cake-service.service';
+import { CupcakeService } from '../../services/cup-cake.service';
 
 @Component({
   selector: 'app-home',
