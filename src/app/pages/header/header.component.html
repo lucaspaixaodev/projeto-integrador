@@ -7,6 +7,9 @@
     <div class="right-aligned">
       <button mat-button class="cart-icon" aria-label="botao-de-carrinho" (click)="navigateToCart()">
         Carrinho <mat-icon>shopping_cart</mat-icon>
+        @if (cartItemCount$ | async) {
+          <span class="cart-count">{{ cartItemCount$ | async }}</span>
+        }
       </button>
       <button mat-button class="login-icon" aria-label="botao-de-login" (click)="navigateToLogin()">
         Login <mat-icon>login</mat-icon>

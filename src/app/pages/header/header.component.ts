@@ -1,19 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
+import { CartService } from '../../services/cart.service';
+import { Observable } from 'rxjs';
+import { AsyncPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [MatToolbarModule, MatIconModule, MatButtonModule, MatSidenavModule],
+  imports: [
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSidenavModule,
+    AsyncPipe,
+    CommonModule
+    ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  public cartItemCount$!: Observable<number>;
+  public cartService = inject(CartService);
+
   constructor(private router: Router) {}
+
+  public ngOnInit() {
+    this.cartItemCount$ = this.cartService.getCartItemCount();
+  }
 
   public navigateToHome() {
     this.router.navigate(['/']);
