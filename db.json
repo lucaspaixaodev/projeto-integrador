@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "CupCake de Chocolate",
+    "price": 4.99,
+    "description": "Delicioso cupcake de chocolate com cobertura suave e decorado com chocolate ralado.",
+    "image": "https://example.com/cupcake-chocolate.jpg"
+  },
+  {
+    "id": 2,
+    "name": "CupCake de Baunilha",
+    "price": 3.99,
+    "description": "Cupcake refrescante com cobertura de baunilha e decorado com confeitos de baunilha.",
+    "image": "https://example.com/cupcake-vanilla.jpg"
+  },
+  {
+    "id": 3,
+    "name": "CupCake de Chocolate Branco",
+    "price": 4.50,
+    "description": "Suave cupcake de chocolate branco com cobertura cremosa e raspas de chocolate branco.",
+    "image": "https://example.com/cupcake-white-chocolate.jpg"
+  },
+  {
+    "id": 4,
+    "name": "CupCake de Morango",
+    "price": 4.25,
+    "description": "Cupcake saboroso de morango com cobertura de creme de morango e decorado com uma fatia de morango fresco.",
+    "image": "https://example.com/cupcake-strawberry.jpg"
+  },
+  {
+    "id": 5,
+    "name": "CupCake de Coco",
+    "price": 4.00,
+    "description": "Delicioso cupcake de coco com cobertura de creme de coco e flocos de coco torrado.",
+    "image": "https://example.com/cupcake-coconut.jpg"
+  }
+]
