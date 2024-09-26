@@ -9,9 +9,7 @@
     <div class="toolbar-actions">
       <button mat-button class="cart-button" aria-label="botao-de-carrinho" (click)="navigateToCart()">
         <mat-icon>shopping_cart</mat-icon>
-        @if (cartItemCount$ | async) {
-          <span class="cart-count">{{ cartItemCount$ | async }}</span>
-        }
+        <span class="cart-count" *ngIf="(cartItemCount$ | async) as count">{{ count }}</span>
       </button>
       <button mat-button class="auth-button" aria-label="botao-de-login" (click)="navigateToLogin()">
         <mat-icon>person</mat-icon>
@@ -20,6 +18,10 @@
       <button mat-button class="auth-button" aria-label="botao-de-cadastro" (click)="navigateToRegister()">
         <mat-icon>person_add</mat-icon>
         <span>Cadastrar</span>
+      </button>
+      <button mat-button class="admin-button" aria-label="botao-de-administracao" (click)="navigateToAdmin()">
+        <mat-icon>admin_panel_settings</mat-icon>
+        <span>Administração</span>
       </button>
     </div>
   </div>

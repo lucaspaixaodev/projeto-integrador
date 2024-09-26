@@ -1,0 +1,23 @@
+<div class="admin-container">
+  <h1>Painel de Administração de Cupcakes</h1>
+
+  <nav class="admin-nav">
+    <ul>
+      <li><a (click)="listarCupcakes()">Listar Cupcakes</a></li>
+    </ul>
+  </nav>
+
+  <section class="admin-summary">
+    <h2>Resumo</h2>
+    <ul>
+      <li>Total de Cupcakes: {{ totalCupcakes }}</li>
+      <li>Cupcake Mais Vendido: {{ bestSellerCupcake }}</li>
+      <li>Vendas do Mês: R$ {{ monthSales }}</li>
+    </ul>
+  </section>
+
+  <section class="quick-actions">
+    <h2>Ações Rápidas</h2>
+    <button (click)="relatorioDeVendas()">Relatório de Vendas</button>
+  </section>
+</div>

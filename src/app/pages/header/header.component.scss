@@ -49,7 +49,7 @@
     margin-left: auto; // Empurra as ações para a direita
   }
 
-  .cart-button, .auth-button {
+  .cart-button, .auth-button, .admin-button {
     margin-left: 16px;
     color: #333;
     font-size: 14px; // Tamanho de fonte reduzido
@@ -75,7 +75,7 @@
     }
   }
 
-  .auth-button {
+  .auth-button, .admin-button {
     &:hover {
       background-color: rgba(233, 30, 99, 0.1); // Cor rosa suave no hover
     }

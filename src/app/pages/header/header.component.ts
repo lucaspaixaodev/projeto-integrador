@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
     MatSidenavModule,
     AsyncPipe,
     CommonModule
-    ],
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -47,5 +47,9 @@ export class HeaderComponent {
 
   public navigateToCart() {
     this.router.navigate(['/cart']);
+  }
+
+  public navigateToAdmin() {
+    this.router.navigate(['/admin']);
   }
 }
