@@ -8,7 +8,7 @@ import { CartService } from '../../services/cart.service';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../../services/auth-service.service'; // Adicione esta importação
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
