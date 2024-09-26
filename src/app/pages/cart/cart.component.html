@@ -2,10 +2,10 @@
   <h1 class="cart-title">Seu Carrinho</h1>
 
   <mat-card *ngFor="let item of cartItems" class="cart-item">
-    <mat-card-header>
+    <mat-card-content>
       <mat-card-title>{{ item.name }}</mat-card-title>
-      <mat-card-subtitle>Quantidade: {{ item.quantity }}</mat-card-subtitle>
-    </mat-card-header>
+      <p >Quantidade: {{ item.quantity }}</p>
+    </mat-card-content>
     <mat-card-content>
       <p>Preço unitário: R$ {{ item.price.toFixed(2) }}</p>
       <p>Subtotal: R$ {{ (item.price * item.quantity).toFixed(2) }}</p>
