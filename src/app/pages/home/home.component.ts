@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../services/cart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,7 @@ import { CartService } from '../../services/cart.service';
 })
 export class HomeComponent {
   public cartService = inject(CartService);
+  private router = inject(Router);
 
   public products = [
     { id: 1, name: 'Cupcake de Chocolate', price: 9.99, image: 'assets/images/cupcake-chocolate.jpg' },
@@ -22,5 +24,10 @@ export class HomeComponent {
 
   addToCart(product: { id: number, name: string, price: number }) {
     this.cartService.addToCart(product);
+  }
+
+  buyNow(product: any) {
+    this.cartService.addToCart(product);
+    this.router.navigate(['/cart']);
   }
 }

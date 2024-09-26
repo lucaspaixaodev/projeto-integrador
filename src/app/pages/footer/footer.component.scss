@@ -1,24 +1,52 @@
 .footer {
-  background-color: #f8f9fa;
+  background-color: #f8e5e5; // Mesma cor de fundo do header
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); // Sombra na parte superior
   padding: 20px 0;
-  margin-top: 30px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  height: 80px; // Mesma altura do header
 
   .footer-block {
     text-align: center;
 
     h3 {
-      color: #333;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
+      color: #e91e63; // Cor rosa similar ao header
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 8px;
     }
 
     p {
-      color: #666;
-      font-size: 0.9rem;
-      margin: 5px 0;
+      color: #333;
+      font-size: 14px;
+      margin: 4px 0;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #e91e63; // Efeito hover similar aos botões do header
+      }
     }
   }
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.contact-block {
+  text-align: center;
+}
+
+.contact-block p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-block mat-icon {
+  margin-right: 8px;
 }

@@ -1,26 +1,83 @@
 .header-toolbar {
+  background-color: #f8e5e5; // Cor de fundo suave para uma loja de cupcakes
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 80px; // Altura fixa para o cabeçalho
+
   .toolbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    position: relative; // Adicionado para posicionamento absoluto da logo
   }
 
-  .left-aligned {
-    margin-right: auto;
+  .home-button {
+    color: #e91e63; // Cor rosa para o ícone de casa
   }
 
-  .center-aligned {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  .logo-container {
+    position: absolute; // Posicionamento absoluto
+    left: 50%; // Centraliza horizontalmente
+    top: 50%; // Centraliza verticalmente
+    transform: translate(-50%, -50%); // Ajusta o centro exato
+    z-index: 1; // Garante que a logo fique acima dos outros elementos
+
+    .app-logo {
+      height: 100px; // Tamanho reduzido para se adequar melhor ao cabeçalho
+      object-fit: contain;
+      transition: transform 0.3s ease, filter 0.3s ease; // Adicionada transição suave
+
+      &:hover {
+        transform: scale(1.05); // Efeito de hover mais sutil
+        filter: brightness(1.1); // Aumenta levemente o brilho ao passar o mouse
+      }
+    }
+
+    .logo-text {
+      margin-left: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #e91e63;
+    }
   }
 
-  .right-aligned {
-    margin-left: auto;
+  .toolbar-actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto; // Empurra as ações para a direita
   }
 
-  .register-icon {
-    margin-left: 10px;
+  .cart-button, .auth-button {
+    margin-left: 16px;
+    color: #333;
+    font-size: 14px; // Tamanho de fonte reduzido
+
+    mat-icon {
+      margin-right: 4px;
+      font-size: 20px; // Tamanho do ícone ajustado
+    }
+  }
+
+  .cart-button {
+    position: relative;
+
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: #e91e63;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 12px;
+    }
+  }
+
+  .auth-button {
+    &:hover {
+      background-color: rgba(233, 30, 99, 0.1); // Cor rosa suave no hover
+    }
   }
 }

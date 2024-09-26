@@ -6,6 +6,9 @@ import { MatCardContent } from '@angular/material/card';
 import { MatCardActions } from '@angular/material/card';
 import { MatCardHeader } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
+import { CartService } from '../../services/cart.service';
+import { Router } from '@angular/router';
+import { inject } from '@angular/core';
 
 interface CartItem {
   id: number;
@@ -30,35 +33,32 @@ interface CartItem {
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+  router = inject(Router);
   cartItems: CartItem[] = [];
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-    // Aqui você deve carregar os itens do carrinho, possivelmente de um serviço
-    this.cartItems = [
-      { id: 1, name: 'Cupcake de Chocolate', price: 5.99, quantity: 2 },
-      { id: 2, name: 'Cupcake de Baunilha', price: 4.99, quantity: 1 },
-    ];
+    this.cartItems = this.cartService.getCartItems();
   }
 
   removeItem(item: CartItem): void {
-    const index = this.cartItems.indexOf(item);
-    if (index > -1) {
-      this.cartItems.splice(index, 1);
-    }
+    this.cartService.removeFromCart(item.id);
+    this.cartItems = this.cartService.getCartItems();
   }
 
   decreaseQuantity(item: CartItem): void {
     if (item.quantity > 1) {
-      item.quantity--;
+      this.cartService.updateQuantity(item.id, item.quantity - 1);
     } else {
       this.removeItem(item);
     }
+    this.cartItems = this.cartService.getCartItems();
   }
 
   increaseQuantity(item: CartItem): void {
-    item.quantity++;
+    this.cartService.updateQuantity(item.id, item.quantity + 1);
+    this.cartItems = this.cartService.getCartItems();
   }
 
   getTotalItems(): number {
@@ -73,4 +73,9 @@ export class CartComponent implements OnInit {
     // Implemente a lógica de finalização da compra aqui
     console.log('Finalizando a compra...');
   }
+
+  navigateToHome(): void {
+    this.router.navigate(['']);
+  }
+
 }

@@ -1,21 +1,25 @@
 <mat-toolbar class="header-toolbar">
   <div class="toolbar-container">
-    <button mat-icon-button class="menu-icon left-aligned" aria-label="botao-de-menu" (click)="navigateToHome()">
+    <button mat-icon-button class="home-button" aria-label="botao-de-home" (click)="navigateToHome()">
       <mat-icon>home</mat-icon>
     </button>
-    <span class="app-title center-aligned">CupCakes Store</span>
-    <div class="right-aligned">
-      <button mat-button class="cart-icon" aria-label="botao-de-carrinho" (click)="navigateToCart()">
-        Carrinho <mat-icon>shopping_cart</mat-icon>
+    <div class="logo-container">
+      <img src="assets/images/cupcake-logo.png" alt="CupCakes Store Logo" class="app-logo">
+    </div>
+    <div class="toolbar-actions">
+      <button mat-button class="cart-button" aria-label="botao-de-carrinho" (click)="navigateToCart()">
+        <mat-icon>shopping_cart</mat-icon>
         @if (cartItemCount$ | async) {
           <span class="cart-count">{{ cartItemCount$ | async }}</span>
         }
       </button>
-      <button mat-button class="login-icon" aria-label="botao-de-login" (click)="navigateToLogin()">
-        Login <mat-icon>login</mat-icon>
+      <button mat-button class="auth-button" aria-label="botao-de-login" (click)="navigateToLogin()">
+        <mat-icon>person</mat-icon>
+        <span>Login</span>
       </button>
-      <button mat-button class="register-icon" aria-label="botao-de-cadastro" (click)="navigateToRegister()">
-        Cadastrar <mat-icon>person_add</mat-icon>
+      <button mat-button class="auth-button" aria-label="botao-de-cadastro" (click)="navigateToRegister()">
+        <mat-icon>person_add</mat-icon>
+        <span>Cadastrar</span>
       </button>
     </div>
   </div>
