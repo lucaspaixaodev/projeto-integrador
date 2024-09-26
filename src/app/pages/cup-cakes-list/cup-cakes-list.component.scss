@@ -87,3 +87,18 @@ th:hover {
 .pagination span {
   margin: 0 10px;
 }
+
+button.back-btn {
+  background-color: #FF69B4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  margin-left: 10px; // Adiciona uma margem à esquerda para separação
+}
+
+button.back-btn:hover {
+  background-color: #FF1493;
+}

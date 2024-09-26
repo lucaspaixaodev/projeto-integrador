@@ -27,4 +27,5 @@ export class AdminPageComponent {
   adicionarCupcake() {
     this._router.navigate(['/admin/cupcakes/novo']);
   }
+
 }

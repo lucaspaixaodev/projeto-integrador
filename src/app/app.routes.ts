@@ -6,6 +6,7 @@ import { CartComponent } from './pages/cart/cart.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { CupCakesListComponent } from './pages/cup-cakes-list/cup-cakes-list.component';
 import { CupCakesReportComponent } from './pages/cup-cakes-report/cup-cakes-report.component';
+import { CupCakeCreateComponent } from './pages/cup-cake-create/cup-cake-create.component';
 
 export const routes: Routes = [
   {
@@ -35,5 +36,9 @@ export const routes: Routes = [
   {
     path: 'admin/cupcakes/relatorio',
     component: CupCakesReportComponent
+  },
+  {
+    path: 'admin/cupcakes/novo',
+    component: CupCakeCreateComponent
   }
 ];

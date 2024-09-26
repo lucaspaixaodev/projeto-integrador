@@ -2,6 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CupcakeService } from '../../services/cup-cake-service.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-cup-cakes-report',
@@ -12,6 +13,7 @@ import { CupcakeService } from '../../services/cup-cake-service.service';
 })
 export class CupCakesReportComponent implements OnInit {
   // private cupcakeService = inject(CupcakeService);
+  private location = inject(Location);
 
   sales: any[] = [];
   filteredSales: any[] = [];
@@ -45,5 +47,9 @@ export class CupCakesReportComponent implements OnInit {
         (!end || saleDate <= end)
       );
     });
+  }
+
+  onBack() {
+    this.location.back();
   }
 }

@@ -3,6 +3,7 @@ import { CupcakeService } from '../../services/cup-cake-service.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-cup-cakes-list',
@@ -14,12 +15,11 @@ import { Router } from '@angular/router';
 export class CupCakesListComponent implements OnInit {
   // private _cupcakeService = inject(CupcakeService);
   private _router = inject(Router);
+  private location = inject(Location);
 
   cupcakes: any[] = [];
   filteredCupcakes: any[] = [];
-  categories: string[] = [];
   filterText: string = '';
-  filterCategory: string = '';
   currentPage: number = 1;
   totalPages: number = 1;
   itemsPerPage: number = 10;
@@ -52,8 +52,7 @@ export class CupCakesListComponent implements OnInit {
 
   applyFilter() {
     this.filteredCupcakes = this.cupcakes.filter(cupcake =>
-      cupcake.nome.toLowerCase().includes(this.filterText.toLowerCase()) &&
-      (this.filterCategory === '' || cupcake.categoria === this.filterCategory)
+      cupcake.nome.toLowerCase().includes(this.filterText.toLowerCase())
     );
     this.updatePagination();
   }
@@ -87,5 +86,9 @@ export class CupCakesListComponent implements OnInit {
     const endIndex = startIndex + this.itemsPerPage;
     this.filteredCupcakes = this.cupcakes.slice(startIndex, endIndex);
     this.totalPages = Math.ceil(this.cupcakes.length / this.itemsPerPage);
+  }
+
+  onBack() {
+    this.location.back();
   }
 }

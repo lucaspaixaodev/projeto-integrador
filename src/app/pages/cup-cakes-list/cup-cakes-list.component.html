@@ -3,26 +3,22 @@
 
   <div class="filters">
     <input type="text" [(ngModel)]="filterText" placeholder="Filtrar por nome" (input)="applyFilter()">
-    <select [(ngModel)]="filterCategory" (change)="applyFilter()">
-      <option value="">Todas as categorias</option>
-      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
-    </select>
   </div>
 
   <table>
     <thead>
       <tr>
         <th (click)="sort('nome')">Nome <i class="fas fa-sort"></i></th>
+        <th (click)="sort('descricao')">Descrição <i class="fas fa-sort"></i></th>
         <th (click)="sort('preco')">Preço <i class="fas fa-sort"></i></th>
-        <th (click)="sort('categoria')">Categoria <i class="fas fa-sort"></i></th>
         <th>Ações</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let cupcake of filteredCupcakes">
         <td>{{ cupcake.nome }}</td>
+        <td>{{ cupcake.descricao }}</td>
         <td>R$ {{ cupcake.preco.toFixed(2) }}</td>
-        <td>{{ cupcake.categoria }}</td>
         <td>
           <button (click)="editCupcake(cupcake.id)" class="edit-btn">Editar</button>
           <button (click)="deleteCupcake(cupcake.id)" class="delete-btn">Excluir</button>
@@ -40,4 +36,6 @@
     <span>Página {{ currentPage }} de {{ totalPages }}</span>
     <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">Próxima</button>
   </div>
+
+  <button (click)="onBack()" class="back-btn">Voltar</button>
 </div>
