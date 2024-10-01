@@ -24,8 +24,8 @@ export class MeusDadosComponent implements OnInit {
     // Aqui você deve carregar os dados do usuário de um serviço
     // Por enquanto, vamos usar dados de exemplo
     this.usuario = {
-      nome: 'João Silva',
-      email: 'joao@exemplo.com',
+      nome: 'Lucas Paixão',
+      email: 'lucasgpaixao@hotmail.com',
       senha: '********'
     };
   }

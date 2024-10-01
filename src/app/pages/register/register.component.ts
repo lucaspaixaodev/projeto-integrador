@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,6 +11,8 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
+  private _router = inject(Router);
+
   name: string = '';
   email: string = '';
   password: string = '';
@@ -34,10 +37,11 @@ export class RegisterComponent {
 
   fecharModal() {
     this.mostrarModal = false;
+    this._router.navigate(['/login']);
   }
 
   navigateToLogin() {
-    // Lógica para navegar para a página de login
+    this._router.navigate(['/login']);
   }
 }
 

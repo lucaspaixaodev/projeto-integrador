@@ -29,8 +29,8 @@ import { FormsModule } from '@angular/forms';
 export class LoginComponent {
   private _router = inject(Router);
 
-  email: string = '';
-  password: any;
+  email: string = 'lucasgpaixao@hotmail.com';
+  password: string = 'abc123';
 
   navigateToRegister() {
     this._router.navigate(['/register']);

@@ -23,7 +23,7 @@ import { HomeComponent } from '../home/home.component';
 export class LoggedComponent {
   private _router = inject(Router);
 
-  nomeUsuario: string = 'João'; // Substitua por lógica para obter o nome do usuário
+  nomeUsuario: string = 'Lucas'; // Substitua por lógica para obter o nome do usuário
   currentContent: string = 'welcome';
 
   constructor() {
