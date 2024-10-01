@@ -39,4 +39,8 @@ export class LoginComponent {
   onSubmit() {
     console.log(this.email, this.password);
   }
+
+  navigateTo(path: string) {
+    this._router.navigate([`/${path}`]);
+  }
 }

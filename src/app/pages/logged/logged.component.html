@@ -1,0 +1,16 @@
+<div class="logged-container">
+  <nav class="sidebar">
+    <ul>
+      <li><a (click)="navigateTo('pedidos')">Meus Pedidos</a></li>
+      <li><a (click)="navigateTo('enderecos')">Meus Endereços</a></li>
+      <li><a (click)="navigateTo('dados')">Meus Dados</a></li>
+      <li><a (click)="navigateToHome('')">Sair</a></li>
+    </ul>
+  </nav>
+  <main class="content">
+    <div class="welcome-message">
+      <h1>Bem-vindo(a), {{ nomeUsuario }}!</h1>
+      <p>Estamos felizes em tê-lo(a) de volta.</p>
+    </div>
+  </main>
+</div>

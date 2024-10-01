@@ -1,0 +1,26 @@
+<h2>Meus Pedidos</h2>
+
+<div *ngIf="pedidos.length > 0; else semPedidos">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Data</th>
+        <th>Status</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pedido of pedidos">
+        <td>{{ pedido.id }}</td>
+        <td>{{ pedido.data | date:'dd/MM/yyyy' }}</td>
+        <td>{{ pedido.status }}</td>
+        <td>{{ pedido.total | currency:'BRL' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #semPedidos>
+  <p>Você ainda não fez nenhum pedido.</p>
+</ng-template>
