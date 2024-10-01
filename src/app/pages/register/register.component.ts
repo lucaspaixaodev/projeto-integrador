@@ -1,27 +1,43 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.scss'
+  styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  private _router = inject(Router);
-
   name: string = '';
   email: string = '';
   password: string = '';
   confirmPassword: string = '';
 
-  navigateToLogin() {
-    this._router.navigate(['/login']);
-  }
+  mostrarModal: boolean = false;
+  modalTitle: string = '';
+  modalMessage: string = '';
 
   onSubmit() {
-    console.log(this.name, this.email, this.password, this.confirmPassword);
+    if (this.password === this.confirmPassword) {
+      // Simular um registro bem-sucedido
+      this.mostrarModal = true;
+      this.modalTitle = 'Cadastro Realizado';
+      this.modalMessage = 'Seu cadastro foi efetuado com sucesso.';
+    } else {
+      this.mostrarModal = true;
+      this.modalTitle = 'Erro no Cadastro';
+      this.modalMessage = 'As senhas não coincidem. Por favor, tente novamente.';
+    }
+  }
+
+  fecharModal() {
+    this.mostrarModal = false;
+  }
+
+  navigateToLogin() {
+    // Lógica para navegar para a página de login
   }
 }
+
