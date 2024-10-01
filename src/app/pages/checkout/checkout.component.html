@@ -1,6 +1,7 @@
 <div class="checkout-container">
   <div class="checkout-content">
     <h2>Finalizar Compra</h2>
+
     <h3>Resumo do Pedido</h3>
     <table class="order-summary">
       <thead>
@@ -110,7 +111,10 @@
         <p>O pagamento será realizado no momento da entrega.</p>
       </div>
 
-      <button type="submit" [disabled]="!checkoutForm.form.valid">Confirmar Pedido</button>
+      <div class="button-group">
+        <button type="button" class="btn-voltar-carrinho" (click)="voltarAoCarrinho()">Voltar ao Carrinho</button>
+        <button type="submit" [disabled]="!checkoutForm.form.valid">Confirmar Pedido</button>
+      </div>
     </form>
   </div>
 </div>

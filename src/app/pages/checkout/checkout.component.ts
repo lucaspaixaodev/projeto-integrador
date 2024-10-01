@@ -6,6 +6,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 import { CartService } from '../../services/cart.service';
+import { Router, RouterModule } from '@angular/router';
 
 interface PedidoItem {
   nome: string;
@@ -22,13 +23,15 @@ interface PedidoItem {
     MatButtonModule,
     MatSelectModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.scss'
 })
 export class CheckoutComponent implements OnInit {
   private _cartService = inject(CartService);
+  private _router = inject(Router);
 
   fullName: string = '';
   address: string = '';
@@ -116,5 +119,9 @@ export class CheckoutComponent implements OnInit {
 
   isCartaoSelecionado(): boolean {
     return this.metodoPagamento === 'cartao_credito' || this.metodoPagamento === 'cartao_debito';
+  }
+
+  voltarAoCarrinho() {
+    this._router.navigate(['/cart']);
   }
 }
