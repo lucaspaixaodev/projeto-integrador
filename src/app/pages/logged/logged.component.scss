@@ -21,6 +21,7 @@
         color: #333;
         font-size: 16px;
         transition: color 0.3s ease;
+        cursor: pointer;
 
         &:hover {
           color: #007bff;
@@ -33,12 +34,21 @@
 .content {
   flex-grow: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   background-color: #ffffff;
+  position: relative;
+}
+
+.content-wrapper {
+  align-self: flex-start;
+  padding: 20px;
 }
 
 .welcome-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
 
   h1 {

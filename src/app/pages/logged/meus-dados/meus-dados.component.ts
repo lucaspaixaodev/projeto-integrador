@@ -16,6 +16,10 @@ export class MeusDadosComponent implements OnInit {
     senha: ''
   };
 
+  mostrarModal: boolean = false;
+  modalTitle: string = '';
+  modalMessage: string = '';
+
   ngOnInit() {
     // Aqui você deve carregar os dados do usuário de um serviço
     // Por enquanto, vamos usar dados de exemplo
@@ -30,5 +34,14 @@ export class MeusDadosComponent implements OnInit {
     // Aqui você deve implementar a lógica para salvar os dados
     console.log('Dados salvos:', this.usuario);
     // Chamar um serviço para atualizar os dados no backend
+
+    // Exibir o modal de sucesso
+    this.mostrarModal = true;
+    this.modalTitle = 'Alterações Salvas';
+    this.modalMessage = 'Suas alterações foram salvas com sucesso.';
+  }
+
+  fecharModal() {
+    this.mostrarModal = false;
   }
 }

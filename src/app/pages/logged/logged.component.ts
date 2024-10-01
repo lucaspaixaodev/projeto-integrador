@@ -24,6 +24,7 @@ export class LoggedComponent {
   private _router = inject(Router);
 
   nomeUsuario: string = 'João'; // Substitua por lógica para obter o nome do usuário
+  currentContent: string = 'welcome';
 
   constructor() {
     // Aqui você pode adicionar lógica para obter o nome do usuário
@@ -33,6 +34,10 @@ export class LoggedComponent {
   // navigateTo(path: string) {
   //   this._router.navigate([`/logged/${path}`]);
   // }
+
+  showContent(content: string): void {
+    this.currentContent = content;
+  }
 
   navigateTo(path: string) {
     this._router.navigate([`/${path}`]);

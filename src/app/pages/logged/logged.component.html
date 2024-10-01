@@ -1,16 +1,21 @@
 <div class="logged-container">
   <nav class="sidebar">
     <ul>
-      <li><a (click)="navigateTo('pedidos')">Meus Pedidos</a></li>
-      <li><a (click)="navigateTo('enderecos')">Meus Endereços</a></li>
-      <li><a (click)="navigateTo('dados')">Meus Dados</a></li>
+      <li><a (click)="showContent('pedidos')">Meus Pedidos</a></li>
+      <li><a (click)="showContent('enderecos')">Meus Endereços</a></li>
+      <li><a (click)="showContent('dados')">Meus Dados</a></li>
       <li><a (click)="navigateTo('')">Sair</a></li>
     </ul>
   </nav>
   <main class="content">
-    <div class="welcome-message">
+    <div *ngIf="currentContent === 'welcome'" class="welcome-message">
       <h1>Bem-vindo(a), {{ nomeUsuario }}!</h1>
       <p>Estamos felizes em tê-lo(a) de volta.</p>
+    </div>
+    <div class="content-wrapper">
+      <app-meus-pedidos *ngIf="currentContent === 'pedidos'"></app-meus-pedidos>
+      <app-meus-enderecos *ngIf="currentContent === 'enderecos'"></app-meus-enderecos>
+      <app-meus-dados *ngIf="currentContent === 'dados'"></app-meus-dados>
     </div>
   </main>
 </div>

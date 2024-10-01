@@ -16,3 +16,14 @@
     <button type="submit">Salvar Alterações</button>
   </form>
 </div>
+
+<!-- Modal de alterações salvas -->
+<div class="modal-overlay" *ngIf="mostrarModal">
+  <div class="modal">
+    <div class="modal-content">
+      <h2>{{modalTitle}}</h2>
+      <p>{{modalMessage}}</p>
+      <button (click)="fecharModal()">Fechar</button>
+    </div>
+  </div>
+</div>
