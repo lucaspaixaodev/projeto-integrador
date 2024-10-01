@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
+import { CartService } from '../../services/cart.service';
 
 interface PedidoItem {
   nome: string;
@@ -26,7 +27,9 @@ interface PedidoItem {
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.scss'
 })
-export class CheckoutComponent {
+export class CheckoutComponent implements OnInit {
+  private _cartService = inject(CartService);
+
   fullName: string = '';
   address: string = '';
   city: string = '';
@@ -39,14 +42,18 @@ export class CheckoutComponent {
 
   mostrarModal: boolean = false;
 
-  // Simulação de itens do pedido
-  itensPedido: PedidoItem[] = [
-    { nome: 'Produto 1', quantidade: 2, preco: 50.00 },
-    { nome: 'Produto 2', quantidade: 1, preco: 30.00 },
-  ];
+  itensPedido: PedidoItem[] = [];
+
+  ngOnInit() {
+    this.itensPedido = this._cartService.getCartItems().map(item => ({
+      nome: item.name,
+      quantidade: item.quantity,
+      preco: item.price
+    }));
+  }
 
   get totalPedido(): number {
-    return this.itensPedido.reduce((total, item) => total + (item.quantidade * item.preco), 0);
+    return this._cartService.getCartItems().reduce((total, item) => total + (item.price * item.quantity), 0);
   }
 
   abrirModalResumo(form: NgForm) {
