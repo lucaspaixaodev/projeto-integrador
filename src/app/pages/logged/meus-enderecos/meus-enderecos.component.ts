@@ -1,17 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-interface Endereco {
-  id: number;
-  rua: string;
-  numero: string;
-  complemento?: string;
-  bairro: string;
-  cidade: string;
-  estado: string;
-  cep: string;
-  principal: boolean;
-}
+import { Adress } from '../../../interfaces/adress.interface';
 
 @Component({
   selector: 'app-meus-enderecos',
@@ -21,7 +10,7 @@ interface Endereco {
   styleUrl: './meus-enderecos.component.scss'
 })
 export class MeusEnderecosComponent implements OnInit {
-  enderecos: Endereco[] = [];
+  enderecos: Adress[] = [];
 
   ngOnInit() {
     // Simular dados de endereços (substitua isso por uma chamada de API real)
@@ -50,7 +39,7 @@ export class MeusEnderecosComponent implements OnInit {
     ];
   }
 
-  definirEnderecoPrincipal(endereco: Endereco) {
+  definirEnderecoPrincipal(endereco: Adress) {
     this.enderecos.forEach(e => e.principal = false);
     endereco.principal = true;
   }
