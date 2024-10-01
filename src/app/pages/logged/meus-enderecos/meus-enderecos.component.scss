@@ -5,8 +5,8 @@
   border-radius: 5px;
 
   &.principal {
-    border-color: #007bff;
-    background-color: #f0f8ff;
+    border-color: #FF1493;
+    background-color: #fb94c76e;
   }
 
   h3 {
@@ -14,7 +14,7 @@
   }
 
   button {
-    background-color: #007bff;
+    background-color: #FF69B4;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -22,7 +22,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: #0056b3;
+      background-color: #FF1493;
     }
   }
 }

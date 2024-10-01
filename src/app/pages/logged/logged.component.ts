@@ -30,11 +30,11 @@ export class LoggedComponent {
     // Por exemplo, através de um serviço de autenticação
   }
 
-  navigateTo(path: string) {
-    this._router.navigate([`/logged/${path}`]);
-  }
+  // navigateTo(path: string) {
+  //   this._router.navigate([`/logged/${path}`]);
+  // }
 
-  navigateToHome(path: string) {
+  navigateTo(path: string) {
     this._router.navigate([`/${path}`]);
   }
 }

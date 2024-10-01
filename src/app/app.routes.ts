@@ -53,10 +53,26 @@ export const routes: Routes = [
   {
     path: 'logged',
     component: LoggedComponent,
-    children: [
-      { path: 'pedidos', component: MeusPedidosComponent },
-      { path: 'enderecos', component: MeusEnderecosComponent },
-      { path: 'dados', component: MeusDadosComponent }
-    ]
+  },
+  // {
+  //   path: 'logged',
+  //   component: LoggedComponent,
+  //   children: [
+  //     { path: 'pedidos', component: MeusPedidosComponent },
+  //     { path: 'enderecos', component: MeusEnderecosComponent },
+  //     { path: 'dados', component: MeusDadosComponent }
+  //   ]
+  // },
+  {
+    path: 'pedidos',
+    component: MeusPedidosComponent
+  },
+  {
+    path: 'enderecos',
+    component: MeusEnderecosComponent
+  },
+  {
+    path: 'dados',
+    component: MeusDadosComponent
   }
 ];
