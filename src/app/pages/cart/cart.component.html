@@ -29,7 +29,7 @@
       <p>Valor total: R$ {{ getTotalPrice().toFixed(2) }}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button class="finalizar-compra">Finalizar Compra</button>
+      <button class="finalizar-compra" (click)="finalizarCompra()">Finalizar Compra</button>
     </mat-card-actions>
   </mat-card>
 

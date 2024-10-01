@@ -70,4 +70,8 @@ export class CartComponent implements OnInit {
   navigateToHome(): void {
     this._router.navigate(['']);
   }
+
+  finalizarCompra() {
+    this._router.navigate(['/checkout']);
+  }
 }
