@@ -8,6 +8,7 @@
         <th>Data</th>
         <th>Status</th>
         <th>Total</th>
+        <th>Rastreamento</th>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +17,10 @@
         <td>{{ pedido.data | date:'dd/MM/yyyy' }}</td>
         <td>{{ pedido.status }}</td>
         <td>{{ pedido.total | currency:'BRL' }}</td>
+        <td>
+          <button *ngIf="pedido.status !== 'Entregue'" (click)="rastrearPedido(pedido.codigoRastreio)">Rastrear</button>
+          <span *ngIf="pedido.status === 'Entregue'">-</span>
+        </td>
       </tr>
     </tbody>
   </table>

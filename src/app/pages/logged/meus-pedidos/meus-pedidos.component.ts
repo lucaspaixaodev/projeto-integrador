@@ -15,9 +15,14 @@ export class MeusPedidosComponent implements OnInit {
   ngOnInit() {
     // Simular a obtenção de pedidos de um serviço
     this.pedidos = [
-      { id: 1, data: new Date(2024, 2, 1), status: 'Entregue', total: 150.00 },
-      { id: 2, data: new Date(2024, 2, 15), status: 'Em processamento', total: 200.50 },
-      { id: 3, data: new Date(2024, 3, 1), status: 'Enviado', total: 75.99 },
+      { id: 1, data: new Date(2024, 2, 1), status: 'Entregue', total: 150.00, codigoRastreio: 'BR1234567890BR' },
+      { id: 2, data: new Date(2024, 2, 15), status: 'Em processamento', total: 200.50, codigoRastreio: 'BR2345678901BR' },
+      { id: 3, data: new Date(2024, 3, 1), status: 'Enviado', total: 75.99, codigoRastreio: 'BR3456789012BR' },
     ];
+  }
+
+  rastrearPedido(codigoRastreio: string) {
+    const urlRastreioCorreios = `https://www.linkcorreios.com.br/?id=${codigoRastreio}`;
+    window.open(urlRastreioCorreios, '_blank');
   }
 }

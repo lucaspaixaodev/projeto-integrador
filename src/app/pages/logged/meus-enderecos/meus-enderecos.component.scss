@@ -1,28 +1,102 @@
-.endereco {
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 60px); // Ajuste este valor de acordo com a altura do seu header
+}
+
+.content-wrap {
+  flex: 1;
+  padding-bottom: 20px; // Espaço extra no final do conteúdo
+}
+
+.enderecos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.enderecos-lista {
+  flex: 1;
+  min-width: 300px;
+}
+
+.endereco, .novo-endereco-form {
   border: 1px solid #ccc;
   padding: 15px;
   margin-bottom: 15px;
   border-radius: 5px;
+  background-color: white;
+}
 
-  &.principal {
-    border-color: #FF1493;
-    background-color: #fb94c76e;
+.endereco.principal {
+  border-color: #FF1493;
+  background-color: #fb94c76e;
+}
+
+button {
+  background-color: #FF69B4;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: #FF1493;
+  }
+}
+
+.endereco-form input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.adicionar-endereco {
+  background-color: #FF69B4;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-size: 16px;
+
+  &:hover {
+    background-color: #FF1493;
+  }
+}
+
+.enderecos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.enderecos-lista {
+  flex: 1;
+  min-width: 300px;
+}
+
+.novo-endereco-form {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+// Estilos responsivos
+@media (max-width: 768px) {
+  .enderecos-container {
+    flex-direction: column;
   }
 
-  h3 {
-    margin-top: 0;
-  }
-
-  button {
-    background-color: #FF69B4;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 3px;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #FF1493;
-    }
+  .novo-endereco-form {
+    max-width: 100%;
   }
 }

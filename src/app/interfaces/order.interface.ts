@@ -3,4 +3,5 @@ export interface Order {
   data: Date;
   status: string;
   total: number;
+  codigoRastreio: string;
 }
