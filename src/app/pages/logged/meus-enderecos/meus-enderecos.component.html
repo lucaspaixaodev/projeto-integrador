@@ -6,8 +6,8 @@
       Adicionar Novo Endereço
     </button>
 
-    <div class="enderecos-container">
-      <div *ngIf="mostrarFormularioNovoEndereco" class="novo-endereco-form endereco-form">
+    <div class="enderecos-lista">
+      <div *ngIf="mostrarFormularioNovoEndereco" class="endereco novo-endereco-form">
         <h3>Novo Endereço</h3>
         <input [(ngModel)]="novoEndereco!.rua" placeholder="Rua">
         <input [(ngModel)]="novoEndereco!.numero" placeholder="Número">
@@ -20,19 +20,17 @@
         <button (click)="cancelarNovoEndereco()">Cancelar</button>
       </div>
 
-      <div class="enderecos-lista">
-        <div *ngFor="let endereco of enderecos" class="endereco" [class.principal]="endereco.principal">
-          <h3>{{ endereco.principal ? 'Endereço Principal' : 'Endereço' }}</h3>
-          <p>{{ endereco.rua }}, {{ endereco.numero }}</p>
-          <p *ngIf="endereco.complemento">{{ endereco.complemento }}</p>
-          <p>{{ endereco.bairro }}, {{ endereco.cidade }} - {{ endereco.estado }}</p>
-          <p>CEP: {{ endereco.cep }}</p>
-          <button *ngIf="!endereco.principal" (click)="definirEnderecoPrincipal(endereco)">Definir como Principal</button>
-          <button (click)="editarEndereco(endereco)">Editar</button>
+      <div *ngFor="let endereco of enderecos" class="endereco" [class.principal]="endereco.principal">
+        <h3>{{ endereco.principal ? 'Endereço Principal' : 'Endereço' }}</h3>
+        <p>{{ endereco.rua }}, {{ endereco.numero }}</p>
+        <p *ngIf="endereco.complemento">{{ endereco.complemento }}</p>
+        <p>{{ endereco.bairro }}, {{ endereco.cidade }} - {{ endereco.estado }}</p>
+        <p>CEP: {{ endereco.cep }}</p>
+        <button *ngIf="!endereco.principal" (click)="definirEnderecoPrincipal(endereco)">Definir como Principal</button>
+        <button (click)="editarEndereco(endereco)">Editar</button>
 
-          <div *ngIf="enderecoEmEdicao?.id === endereco.id" class="endereco-form">
-            <!-- Formulário de edição existente -->
-          </div>
+        <div *ngIf="enderecoEmEdicao?.id === endereco.id" class="endereco-form">
+          <!-- Formulário de edição existente -->
         </div>
       </div>
     </div>

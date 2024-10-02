@@ -1,29 +1,26 @@
 .page-container {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 60px); // Ajuste este valor de acordo com a altura do seu header
+  min-height: calc(100vh - 60px);
 }
 
 .content-wrap {
   flex: 1;
-  padding-bottom: 20px; // Espaço extra no final do conteúdo
+  padding-bottom: 20px;
 }
 
-.enderecos-container {
+.enderecos-lista {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-.enderecos-lista {
-  flex: 1;
-  min-width: 300px;
-}
-
 .endereco, .novo-endereco-form {
+  flex: 1;
+  min-width: 250px;
+  max-width: calc(33.333% - 20px);
   border: 1px solid #ccc;
   padding: 15px;
-  margin-bottom: 15px;
   border-radius: 5px;
   background-color: white;
 }
@@ -48,12 +45,11 @@ button {
   }
 }
 
-.endereco-form input {
+.endereco-form input, .novo-endereco-form input {
   display: block;
   margin-bottom: 10px;
   padding: 5px;
   width: 100%;
-  max-width: 300px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
@@ -73,30 +69,19 @@ button {
   }
 }
 
-.enderecos-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.enderecos-lista {
-  flex: 1;
-  min-width: 300px;
-}
-
 .novo-endereco-form {
-  flex: 1;
-  min-width: 300px;
-  max-width: 400px;
+  width: 100%;
+  max-width: none;
+  margin-bottom: 20px;
 }
 
 // Estilos responsivos
 @media (max-width: 768px) {
-  .enderecos-container {
+  .enderecos-lista {
     flex-direction: column;
   }
 
-  .novo-endereco-form {
+  .endereco, .novo-endereco-form {
     max-width: 100%;
   }
 }
