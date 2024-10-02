@@ -22,7 +22,8 @@ export class MeusPedidosComponent implements OnInit {
   }
 
   rastrearPedido(codigoRastreio: string) {
-    const urlRastreioCorreios = `https://www.linkcorreios.com.br/?id=${codigoRastreio}`;
+    // const urlRastreioCorreios = `https://www.linkcorreios.com.br/?id=${codigoRastreio}`;
+    const urlRastreioCorreios = `https://rastreamento.correios.com.br/app/index.php`;
     window.open(urlRastreioCorreios, '_blank');
   }
 }
