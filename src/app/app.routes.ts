@@ -30,29 +30,25 @@ export const routes: Routes = [
     path: 'cart',
     component: CartComponent
   },
-  {
-    path: 'admin',
-    component: AdminPageComponent
-  },
-  {
-    path: 'admin/cupcakes',
-    component: CupCakesListComponent
-  },
-  {
-    path: 'admin/cupcakes/relatorio',
-    component: CupCakesReportComponent
-  },
-  {
-    path: 'admin/cupcakes/novo',
-    component: CupCakeCreateComponent
-  },
+  // {
+  //   path: 'admin',
+  //   component: AdminPageComponent
+  // },
+  // {
+  //   path: 'admin/cupcakes',
+  //   component: CupCakesListComponent
+  // },
+  // {
+  //   path: 'admin/cupcakes/relatorio',
+  //   component: CupCakesReportComponent
+  // },
+  // {
+  //   path: 'admin/cupcakes/novo',
+  //   component: CupCakeCreateComponent
+  // },
   {
     path: 'checkout',
     component: CheckoutComponent
-  },
-  {
-    path: 'logged',
-    component: LoggedComponent,
   },
   // {
   //   path: 'logged',
@@ -62,17 +58,5 @@ export const routes: Routes = [
   //     { path: 'enderecos', component: MeusEnderecosComponent },
   //     { path: 'dados', component: MeusDadosComponent }
   //   ]
-  // },
-  {
-    path: 'pedidos',
-    component: MeusPedidosComponent
-  },
-  {
-    path: 'enderecos',
-    component: MeusEnderecosComponent
-  },
-  {
-    path: 'dados',
-    component: MeusDadosComponent
-  }
+  // }
 ];

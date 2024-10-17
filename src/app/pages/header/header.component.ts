@@ -3,18 +3,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatMenuModule } from '@angular/material/menu';
 import { Router } from '@angular/router';
 import { CartService } from '../../services/cart.service';
+import { AuthService } from '../../services/auth.service';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '../../services/auth.service';
 import { RouterModule } from '@angular/router';
-import { LoggedComponent } from '../logged/logged.component';
-import { HomeComponent } from '../home/home.component';
-import { CartComponent } from '../cart/cart.component';
-import { LoginComponent } from '../login/login.component';
-import { RegisterComponent } from '../register/register.component';
 
 @Component({
   selector: 'app-header',
@@ -24,14 +20,10 @@ import { RegisterComponent } from '../register/register.component';
     MatIconModule,
     MatButtonModule,
     MatSidenavModule,
+    MatMenuModule,
     AsyncPipe,
     CommonModule,
     RouterModule,
-    LoggedComponent,
-    HomeComponent,
-    CartComponent,
-    LoginComponent,
-    RegisterComponent,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
@@ -39,19 +31,23 @@ import { RegisterComponent } from '../register/register.component';
 export class HeaderComponent {
   private _cartService = inject(CartService);
   private _router = inject(Router);
-  // private _authService = inject(AuthService);
+  private _authService = inject(AuthService);
 
   cartItemCount$!: Observable<number>;
-  isAdmin$!: Observable<boolean>;
+  isLoggedIn$!: Observable<boolean>;
   isAdmin = false;
 
   ngOnInit() {
     this.cartItemCount$ = this._cartService.getCartItemCount();
-    this.isAdmin = true;
-    // this.isAdmin$ = this._authService.isAdmin$ as Observable<boolean>;
+    this.isLoggedIn$ = this._authService.isLoggedIn$;
   }
 
   navigateTo(path: string) {
     this._router.navigate([`/${path}`]);
+  }
+
+  logout() {
+    this._authService.logout();
+    this.navigateTo('');
   }
 }

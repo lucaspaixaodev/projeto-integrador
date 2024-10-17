@@ -75,9 +75,36 @@
     }
   }
 
-  .auth-button, .admin-button {
+  .auth-button, .admin-button, .logged-button {
     &:hover {
       background-color: rgba(233, 30, 99, 0.1);
     }
+  }
+
+  .logged-button {
+    background-color: #FF69B4;
+    color: white;
+
+    &:hover {
+      background-color: #FF1493;
+    }
+  }
+}
+
+// Estilos para o menu suspenso
+::ng-deep .mat-menu-panel {
+  background-color: #f8e5e5;
+}
+
+::ng-deep .mat-menu-item {
+  color: #333;
+  font-size: 14px;
+
+  &:hover {
+    background-color: rgba(233, 30, 99, 0.1);
+  }
+
+  mat-icon {
+    color: white;
   }
 }
