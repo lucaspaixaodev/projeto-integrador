@@ -1,27 +1,57 @@
-# Projeto Integrador de software II
+# Projeto integrador de software II (Paixão CakeShop)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.9.
+<p align="center">
+  Projeto integrador de software II by <a href="https://github.com/lucaspaixaodev">Lucas Paixão</a>
+</p>
 
-## Development server
+## Índice
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Descrição](#descrição)
+- [Requisitos](#requisitos)
+- [Diagrama de caso de uso](#diagrama-de-casos-de-uso)
+- [Diagrama do banco de dados](#diagrama-do-banco-de-dados)
+- [Casos de uso](#casos-de-uso)
+- [Layout da aplicação](#layout-da-aplicação)
+- [Divisão das entregas](#divisão-das-entregas)
 
-## Code scaffolding
+## Descrição
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+A aplicação a ser desenvolvida deve permitir que pessoas comprem cupcakes de maneira mais fácil, além de facilitar os responsáveis pela empresa.
 
-## Build
+## Requisitos
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [Requisitos do usuário](./requisitos/requisitos-usuario.md)
+- [Requisitos Funcionais](./requisitos/requisitos-funcionais.md)
+- [Requisitos Não Funcionais](./requisitos/requisitos-nao-funcionais.md)
 
-## Running unit tests
+## Diagrama de casos de uso
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+""
 
-## Running end-to-end tests
+![Diagrama de casos de uso da aplicação Paixão CakeShop](./diagramas/casos-de-uso.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Diagrama do banco de dados
 
-## Further help
+A aplicação terá três tabelas, `users`, `locais` e `objetos`. No diagrama abaixo é possível ver os detalhes de cada uma dessas tabelas e como elas se relacionam.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Diagrama do banco de dados da aplicação Paixão CakeShop](./diagramas/banco-de-dados.png)
+
+## Casos de uso
+
+Abaixo pode ser encontrada uma descrição textual detalhada sobre cada caso de uso exitente na aplicação.
+
+- [Casos de Uso](./casos-de-uso/casos-de-uso.md)
+
+## Layout da aplicação
+
+Abaixo estão os links para acessar os [wireframes](https://pt.wikipedia.org/wiki/Website_wireframe) e [mockups](https://pt.wikipedia.org/wiki/Mockup) da aplicação.
+
+- [Wireframes](https://whimsical.com/mockup-achados-e-perdidos-DsnQVGKsruoBwHHFeppvuy)
+- [Mockups](https://www.figma.com/file/Ff4ghTnINeyT9vHDil0goa/Achados-e-Perdidos)
+
+## Divisão das entregas
+
+O desenvolvimento do sistema será dividido em quatro entregas acumulativas, cada entrega terá quais funcionalidades do sistema devem ser desenvolvidas, abaixo estão os links para ver os detalhes do quê deve ser desenvolvido em cada uma das entregas.
+
+- [Primeira entrega](./entregas/primeira-entrega.md)
+
