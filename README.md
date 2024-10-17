@@ -1,9 +1,5 @@
 # Projeto integrador de software II (Paixão CakeShop)
 
-<p align="center">
-  Projeto integrador de software II by <a href="https://github.com/lucaspaixaodev">Lucas Paixão</a>
-</p>
-
 ## Índice
 
 - [Descrição](#descrição)
