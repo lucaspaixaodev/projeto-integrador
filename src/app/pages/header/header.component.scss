@@ -49,7 +49,7 @@
     margin-left: auto;
   }
 
-  .cart-button, .auth-button, .admin-button {
+  .cart-button, .auth-button {
     margin-left: 16px;
     color: #333;
     font-size: 14px;
@@ -87,6 +87,14 @@
 
     &:hover {
       background-color: #FF1493;
+    }
+  }
+
+  .logout-button {
+    color: #333;
+
+    &:hover {
+      background-color: rgba(233, 30, 99, 0.1);
     }
   }
 }
