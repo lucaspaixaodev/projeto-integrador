@@ -3,7 +3,7 @@
     <img [src]="product.image" class="card-img-top" [alt]="product.name">
     <div class="card-body">
       <h5 class="card-title">{{ product.name }}</h5>
-      <p class="card-text">Descrição breve do produto. Aqui você pode adicionar detalhes sobre o item.</p>
+      <p class="card-text">{{ product.description }}</p>
       <p class="price">R$ {{ product.price.toFixed(2) }}</p>
     </div>
     <div class="card-footer">
