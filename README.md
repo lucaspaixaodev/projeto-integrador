@@ -93,19 +93,13 @@ A aplicação a ser desenvolvida deve permitir que pessoas comprem cupcakes de m
 
 ## Diagrama de casos de uso
 
-![Diagrama de casos de uso da aplicação Paixão CakeShop](./documentacao/diagramas/casos-de-uso.png)
+![Diagrama de casos de uso da aplicação Paixão CakeShop](./documentacao/diagramas/diagrama_caso_de_uso.png)
 
 ## Diagrama do banco de dados
 
 A aplicação terá três tabelas, `users`, `locais` e `objetos`. No diagrama abaixo é possível ver os detalhes de cada uma dessas tabelas e como elas se relacionam.
 
-![Diagrama do banco de dados da aplicação Paixão CakeShop](./documentacao/diagramas/banco-de-dados.png)
-
-## Casos de uso
-
-Abaixo pode ser encontrada uma descrição textual detalhada sobre cada caso de uso exitente na aplicação.
-
-- [Casos de Uso](./documentacao/casos-de-uso/casos-de-uso.md)
+![Diagrama do banco de dados da aplicação Paixão CakeShop](./documentacao/diagramas/entidade_relacionamentos.png)
 
 ## Layout da aplicação
 
