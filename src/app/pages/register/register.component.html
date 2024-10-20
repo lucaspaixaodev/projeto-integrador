@@ -1,31 +1,49 @@
 <div class="register-container">
-  <div class="register-content">
-    <h2>Cadastro</h2>
-    <form (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="name">Nome</label>
-        <input type="text" id="name" name="name" [(ngModel)]="name" required>
+  <h2>Cadastro</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">Nome de Usuário</label>
+      <input id="username" type="text" formControlName="username" required>
+      <div *ngIf="registerForm.get('username')?.invalid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)">
+        <small *ngIf="registerForm.get('username')?.errors?.['required']">Nome de usuário é obrigatório</small>
+        <small *ngIf="registerForm.get('username')?.errors?.['minlength']">Nome de usuário deve ter no mínimo 3 caracteres</small>
       </div>
-      <div class="form-group">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" [(ngModel)]="email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" required>
+      <div *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)">
+        <small *ngIf="registerForm.get('email')?.errors?.['required']">Email é obrigatório</small>
+        <small *ngIf="registerForm.get('email')?.errors?.['email']">Email inválido</small>
       </div>
-      <div class="form-group">
-        <label for="password">Senha</label>
-        <input type="password" id="password" name="password" [(ngModel)]="password" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Senha</label>
+      <input id="password" type="password" formControlName="password" required>
+      <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)">
+        <small *ngIf="registerForm.get('password')?.errors?.['required']">Senha é obrigatória</small>
+        <small *ngIf="registerForm.get('password')?.errors?.['minlength']">Senha deve ter no mínimo 6 caracteres</small>
       </div>
-      <div class="form-group">
-        <label for="confirmPassword">Confirmar Senha</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" required>
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirmar Senha</label>
+      <input id="confirmPassword" type="password" formControlName="confirmPassword" required>
+      <div *ngIf="registerForm.hasError('mismatch') && (registerForm.get('confirmPassword')?.dirty || registerForm.get('confirmPassword')?.touched)">
+        <small>As senhas não coincidem</small>
       </div>
-      <button type="submit">Cadastrar</button>
-    </form>
-    <p>Já tem uma conta? <a (click)="navigateToLogin()">Faça login</a></p>
-  </div>
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid">Cadastrar</button>
+  </form>
+
+  <p>Já tem uma conta? <a (click)="navigateToLogin()">Faça login</a></p>
 </div>
 
-<!-- Modal de registro -->
-<div class="modal-overlay" *ngIf="mostrarModal">
+<!-- Modal -->
+<div *ngIf="mostrarModal" class="modal-overlay">
   <div class="modal">
     <div class="modal-content">
       <h2>{{modalTitle}}</h2>

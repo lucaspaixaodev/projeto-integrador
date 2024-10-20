@@ -1,13 +1,13 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, PLATFORM_ID, Inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 
@@ -23,7 +23,6 @@ import { AuthService } from '../../services/auth.service';
     MatDividerModule,
     MatCardModule,
     MatIconModule,
-    FormsModule,
     CommonModule
   ],
   templateUrl: './login.component.html',
@@ -32,29 +31,57 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent {
   private _router = inject(Router);
   private _authService = inject(AuthService);
+  private _formBuilder = inject(FormBuilder);
 
-  email: string = 'lucasgpaixao@hotmail.com';
-  password: string = 'abc123';
+  loginForm: FormGroup;
 
   mostrarModal: boolean = false;
   modalTitle: string = '';
   modalMessage: string = '';
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.loginForm = this._formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+    if (isPlatformBrowser(this.platformId)) {
+      // Inicialize qualquer coisa que dependa do navegador aqui
+    }
+  }
 
   navigateToRegister() {
     this._router.navigate(['/register']);
   }
 
   onSubmit() {
-    console.log(this.email, this.password);
-    this._authService.login();
-    this.mostrarModal = true;
-    this.modalTitle = 'Login Realizado';
-    this.modalMessage = 'Você foi logado com sucesso!';
+    if (this.loginForm.valid) {
+      const { email, password } = this.loginForm.value;
+      this._authService.login(email, password).subscribe(
+        response => {
+          console.log('Login bem-sucedido', response);
+          this.mostrarModal = true;
+          this.modalTitle = 'Login Realizado';
+          this.modalMessage = 'Você foi logado com sucesso!';
+        },
+        error => {
+          console.error('Erro no login', error);
+          this.mostrarModal = true;
+          this.modalTitle = 'Erro no Login';
+          this.modalMessage = 'Credenciais inválidas. Por favor, tente novamente.';
+        }
+      );
+    } else {
+      this.mostrarModal = true;
+      this.modalTitle = 'Formulário Inválido';
+      this.modalMessage = 'Por favor, preencha todos os campos corretamente.';
+    }
   }
 
   fecharModal() {
     this.mostrarModal = false;
-    this._router.navigate(['/']);
+    if (this.modalTitle === 'Login Realizado') {
+      this._router.navigate(['/']);
+    }
   }
 
   navigateTo(path: string) {
