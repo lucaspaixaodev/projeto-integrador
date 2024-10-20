@@ -1,5 +1,4 @@
-import { Component, inject, PLATFORM_ID, Inject } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -39,14 +38,11 @@ export class LoginComponent {
   modalTitle: string = '';
   modalMessage: string = '';
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor() {
     this.loginForm = this._formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
-    if (isPlatformBrowser(this.platformId)) {
-      // Inicialize qualquer coisa que dependa do navegador aqui
-    }
   }
 
   navigateToRegister() {
