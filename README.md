@@ -42,13 +42,13 @@ A aplicação a ser desenvolvida deve permitir que pessoas comprem cupcakes de m
 
 2. Instale as dependências do backend:
    ```
-   cd backend
+   cd cupcake-backend
    npm install
    ```
 
 3. Instale as dependências do frontend:
    ```
-   cd ../frontend
+   cd projeto-integrador
    npm install
    ```
 
