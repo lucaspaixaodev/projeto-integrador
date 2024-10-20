@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { CupcakeService } from '../../services/cup-cake.service';
+import { ProductService } from '../../services/product.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
