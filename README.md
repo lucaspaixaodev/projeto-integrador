@@ -101,9 +101,9 @@ A aplicação terá três tabelas, `users`, `locais` e `objetos`. No diagrama ab
 
 ![Diagrama do banco de dados da aplicação Paixão CakeShop](./documentacao/diagramas/entidade_relacionamentos.png)
 
-## Layout da aplicação
+<!-- ## Layout da aplicação
 
 Abaixo estão os links para acessar os [wireframes](https://wireframe.cc/) e [mockups](https://www.figma.com/) da aplicação.
 
 - [Wireframes](https://)
-- [Mockups](https://www.figma.com)
+- [Mockups](https://www.figma.com) -->

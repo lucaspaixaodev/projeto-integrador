@@ -1,0 +1,16 @@
+#### Requisitos do Usuário
+- Fazer cadastro na loja.
+- Filtrar cupcakes por categoria.
+- Utilizar funcionalidades do carrinho de compra.
+- Cadastrar métodos de pagamento (cartão de crédito e PIX).
+- Visualizar comentários e avaliações do produto.
+- Classificar comentários por relevância.
+- Adicionar comentários aos produtos após a compra.
+- Cancelar a conta na loja virtual.
+- Entrar em contato com a loja.
+- Assinar o plano de fidelidade.
+- Acompanhar status do pedido.
+- Receber cupcakes personalizados.
+- Receber ofertas especiais por e-mail.
+- Compartilhar cupcakes nas redes sociais.
+- Comprar vale-presente.

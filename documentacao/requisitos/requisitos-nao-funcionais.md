@@ -1,0 +1,11 @@
+#### Requisitos Não Funcionais
+- O carregamento da página deve ser em até 5 segundos.
+- A aplicação deve ser responsiva e funcionar em dispositivos móveis e desktop.
+- O sistema de carrinho de compra deve ser atualizado em tempo real.
+- O sistema de pagamento deve ser seguro e protegido contra falhas.
+- O formulário de contato deve ser responsivo.
+- Confirmação de cancelamento de conta em até 24 horas.
+- O sistema de envio de ofertas por e-mail deve ser seguro e seguir a LGPD.
+- O processo de compra de vale-presente deve ser fácil de entender.
+- O botão de compartilhamento de cupcakes deve funcionar em todos os dispositivos.
+- O sistema de pedidos personalizados deve ser rápido e preciso.
