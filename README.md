@@ -99,7 +99,7 @@ A aplicação a ser desenvolvida deve permitir que pessoas comprem cupcakes de m
 
 A aplicação terá três tabelas, `users`, `locais` e `objetos`. No diagrama abaixo é possível ver os detalhes de cada uma dessas tabelas e como elas se relacionam.
 
-![Diagrama do banco de dados da aplicação Paixão CakeShop](./documentacao/diagramas/entidade_relacionamentos.png)
+![Diagrama do banco de dados da aplicação Paixão CakeShop](./documentacao/diagramas/entidade_relacionamentos.jpeg)
 
 <!-- ## Layout da aplicação
 
