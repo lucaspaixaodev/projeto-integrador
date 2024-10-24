@@ -67,13 +67,13 @@ A aplicação a ser desenvolvida deve permitir que pessoas comprem cupcakes de m
 
 1. Inicie o servidor backend:
    ```
-   cd backend
+   cd cupcake-backend
    npm run dev
    ```
 
 2. Em outro terminal, inicie o frontend:
    ```
-   cd frontend
+   cd projeto-integrador
    ng serve
    ```
 
